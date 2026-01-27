@@ -1,0 +1,16 @@
+name = "GAP"
+uuid = "a16e41ea-49e5-47c3-ae18-4d07beb85853"
+authors = ["Helisson Sousa <helissoncg@hotmail.com>"]
+version = "0.1.0"
+
+[deps]
+CPUTime = "a9c8d775-2e2e-55fc-8582-045d282d599e"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+Gurobi = "2e9cd046-0924-5485-92f1-d5272153d98b"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+
+[compat]
+CPUTime = "1.0.0"
+DelimitedFiles = "1.9.1"
+Gurobi = "1.9.1"
+JuMP = "1.29.4"
