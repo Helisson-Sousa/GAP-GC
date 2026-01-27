@@ -15,6 +15,7 @@ using DelimitedFiles
 #import Master
 #import Pricing
 import Parameters
+import OutputStatistics
 
 # >>>>> INSTRUCTIONS <<<<<
 # Args:                        [1]              [2]             [3]                           
@@ -34,10 +35,10 @@ function main(ARGS)
     params = Parameters.read_parameters(parameters_file)
     
     #Set Gurobi environment
-    GRB_ENV = Gurobi.env()
+    GRB_ENV = Gurobi.Env()
 
     #Setup statistics output files
-    output_file = OutputStatistics.setup
+    output_file = OutputStatistics.setup_stats_file(params,inputlist_file,parameters_file)
     
 end
 
