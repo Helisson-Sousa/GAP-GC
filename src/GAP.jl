@@ -10,8 +10,8 @@ using Gurobi
 using CPUTime
 using DelimitedFiles
 
-#import Data
-#import Formulation
+import Data
+import Formulation
 #import Master
 #import Pricing
 import Parameters
@@ -39,6 +39,43 @@ function main(ARGS)
 
     #Setup statistics output files
     output_file = OutputStatistics.setup_stats_file(params,inputlist_file,parameters_file)
+
+    num_inst = input[1] 
+
+    for inst in 1:num_inst
+        stats = OutputStatistics.StatisticsData()
+
+        #caminho da instância
+        instance_file = String(input[inst + 1])
+        data = Data.read_instance(instance_file)
+
+        model = Model(() -> Gurobi.Optimizer(GRB_ENV))
+
+        solution = OutputStatistics.init_std_form_solution(data)
+
+        if params.approach == "MIP_solver"
+            Formulation.create_model!(data, model)
+            #write_to_file(model, "model.lp")
+
+            Parameters.set_MIP_solver_parameters(model,params)
+
+            start_time = time_ns()
+
+            Formulation.solve_stdform_model!(model, data, solution, stats)
+
+            for m in 1:data.NM
+                for j in 1: data.NJ
+                    if solution.x[m,j] > 0
+                        println("x[$m,$j] = ",solution.x[m,j] )
+                    end
+                end
+            end
+
+        elseif params.approach == "col_gen"
+         println("wip")
+        end
+    end
+    
     
 end
 

@@ -1,6 +1,6 @@
 module OutputStatistics
 
-#using Data
+using Data
 using Parameters
 using Dates
 
@@ -14,8 +14,14 @@ Base.@kwdef mutable struct StatisticsData
     total_time::Float64 = 0.0
     sol_status = 0
 end
+mutable struct StdFormModelSolution
+    primal_bound::Float64
+    dual_bound::Float64 
+    x::Array{Int64}
+    status
+end
 
-export StatisticsData, setup_stats_file
+export StatisticsData, setup_stats_file, init_std_form_solution, StdFormModelSolution
 
 function setup_stats_file(params::ExperimentParameters, inputlist_file::String, parameters_file::String)
 
@@ -56,6 +62,19 @@ function setup_stats_file(params::ExperimentParameters, inputlist_file::String, 
     close(out)
 
     return output_file
+end
+
+function init_std_form_solution(data::InstanceData)
+    
+    primal_bound = 1e8
+    dual_bound = -1e8
+    x = Array{Float64}(undef, data.NM,  data.NJ)
+    fill!(x, 0.0)
+    status = 0
+
+    solution = StdFormModelSolution(primal_bound, dual_bound, x, status)
+            
+    return solution
 end
 
 end

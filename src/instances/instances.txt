@@ -1,8 +1,8 @@
 3 6                # n maquinas m tarefas
 10 9 12            # capacidade
-4 3 5 2 3 2        # peso
+4 3 5 2 3 2        # custo
 3 6 5 3 5 4 
 2 3 2 4 5 1 
-5 6 8 2 2 3        # custo     
+5 6 8 2 2 3        # peso    
 4 7 2 9 3 7 
 9 4 5 6 7 3 
