@@ -77,4 +77,24 @@ function init_std_form_solution(data::InstanceData)
     return solution
 end
 
+function print_stats(data::InstanceData, params::ExperimentParameters, stats::StatisticsData, stats_file::String)
+    out = open(stats_file,"a")
+
+    print(out, "\n", data.instance_name, " & ",
+        data.NM, " & ",
+        data.NJ, " & ")
+
+    if params.approach == "MIP_solver" 
+        print(out, round(stats.best_LB, digits = 4), " & ",
+            round(stats.best_UB, digits = 4), " & ",
+            round(stats.gap, digits = 4), " & ",
+            stats.sol_status, " & ",
+            round(stats.total_time, digits = 2), " \\\\")      
+    end
+
+    close(out)
+
+    return
+end
+
 end

@@ -47,8 +47,13 @@ function main(ARGS)
 
         #caminho da instância
         instance_file = String(input[inst + 1])
-        data = Data.read_instance(instance_file)
-
+        instance_file_split = split(instance_file, "/")
+        tipo_data = instance_file_split[3]
+        if tipo_data == "STD"
+            data = Data.read_instance(instance_file)
+        elseif tipo_data == "gap_a"
+            data = Data.read_instance_a(instance_file)
+        end
         model = Model(() -> Gurobi.Optimizer(GRB_ENV))
 
         solution = OutputStatistics.init_std_form_solution(data)
@@ -63,6 +68,10 @@ function main(ARGS)
 
             Formulation.solve_stdform_model!(model, data, solution, stats)
 
+            finish_time = time_ns()
+            total_time = (finish_time - start_time) * 1e-9
+            stats.total_time = total_time
+
             for m in 1:data.NM
                 for j in 1: data.NJ
                     if solution.x[m,j] > 0
@@ -74,6 +83,8 @@ function main(ARGS)
         elseif params.approach == "col_gen"
          println("wip")
         end
+
+        OutputStatistics.print_stats(data, params, stats, output_file)
     end
     
     
