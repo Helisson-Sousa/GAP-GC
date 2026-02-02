@@ -49,11 +49,12 @@ function main(ARGS)
         instance_file = String(input[inst + 1])
         instance_file_split = split(instance_file, "/")
         tipo_data = instance_file_split[3]
-        if tipo_data == "STD"
+        if tipo_data == "STD" || tipo_data == "gap_e"
             data = Data.read_instance(instance_file)
-        elseif tipo_data == "gap_a"
-            data = Data.read_instance_a(instance_file)
-        end
+        elseif tipo_data == "gap_a" || tipo_data == "gap_b" || tipo_data == "gap_c" || tipo_data == "gap_d"
+            data = Data.read_instance_abcd(instance_file)        
+        end   
+
         model = Model(() -> Gurobi.Optimizer(GRB_ENV))
 
         solution = OutputStatistics.init_std_form_solution(data)

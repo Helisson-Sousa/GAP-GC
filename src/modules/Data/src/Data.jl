@@ -49,37 +49,34 @@ function read_instance(instance_file::String)
 
     return instance_data
 end
-function read_instance_a(instance_file::String)
-    data = readdlm(instance_file)
+function read_instance_abcd(instance_file::String)
+    file = open(instance_file)
+    fileText = read(file, String)
+    data = split(fileText)
     instance_name = instance_file
     
-    NM = data[1, 1]
-    println(NM)
+    NM = parse(Int64, data[1])
 
-    NJ = data[1, 2]
-    println(NJ)
-
-    cap = Array{Int64}(undef, NM)
-    for i in 1:NM
-        cap[i] = data[2, i]
-    end
-    println(cap)
+    NJ = parse(Int64, data[2])
 
     cost = Array{Int64}(undef, NM, NJ)
     for i in 1:NM
         for j in 1:NJ
-            cost[i,j] = data[i + 2, j]
+            cost[i,j] = parse(Int64, data[j + 2 + ((i-1)*NJ)])
         end
     end
-    println(cost)
 
     w = Array{Int64}(undef, NM, NJ)
-     for i in 1:NM
+    for i in 1:NM
         for j in 1:NJ
-            w[i,j] = data[i + 5, j]
+            w[i,j] = parse(Int64, data[j + 2 + (NM * NJ) + ((i-1)*NJ)])
         end
     end
-    println(w)
+
+    cap = Array{Int64}(undef, NM)
+    for i in 1:NM
+        cap[i] = parse(Int64, data[i + 2 + (2 * NM * NJ)])
+    end
     
     instance_data = InstanceData(instance_name, NM, NJ, cap, cost, w)
 
