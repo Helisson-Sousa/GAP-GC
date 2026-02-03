@@ -1,0 +1,65 @@
+Statistics for GAP
+Date: 2026-02-02
+Approach: Formulation with MIP solver
+Time limit: 600.0
+MIP gap tolerance: 1.0e-8
+Integer feasibility tolerance: 1.0e-6
+Number of threads: 1
+Screen output: 1
+
+Instance & NI & NM  & LB & UB & gap & status & total_time \\
+src/instances/gap_a/a05100 & 5 & 100 & 1698.0 & 1698.0 & 0.0 & OPTIMAL & 0.7 \\
+src/instances/gap_a/a05200 & 5 & 200 & 3235.0 & 3235.0 & 0.0 & OPTIMAL & 0.01 \\
+src/instances/gap_a/a10100 & 10 & 100 & 1360.0 & 1360.0 & 0.0 & OPTIMAL & 0.03 \\
+src/instances/gap_a/a10200 & 10 & 200 & 2623.0 & 2623.0 & 0.0 & OPTIMAL & 0.02 \\
+src/instances/gap_a/a20100 & 20 & 100 & 1158.0 & 1158.0 & 0.0 & OPTIMAL & 0.02 \\
+src/instances/gap_a/a20200 & 20 & 200 & 2339.0 & 2339.0 & 0.0 & OPTIMAL & 0.06 \\
+src/instances/gap_b/b05100 & 5 & 100 & 1843.0 & 1843.0 & 0.0 & OPTIMAL & 0.26 \\
+src/instances/gap_b/b05200 & 5 & 200 & 3552.0 & 3552.0 & 0.0 & OPTIMAL & 0.95 \\
+src/instances/gap_b/b10100 & 10 & 100 & 1407.0 & 1407.0 & 0.0 & OPTIMAL & 0.06 \\
+src/instances/gap_b/b10200 & 10 & 200 & 2827.0 & 2827.0 & 0.0 & OPTIMAL & 1.0 \\
+src/instances/gap_b/b20100 & 20 & 100 & 1166.0 & 1166.0 & 0.0 & OPTIMAL & 0.11 \\
+src/instances/gap_b/b20200 & 20 & 200 & 2339.0 & 2339.0 & 0.0 & OPTIMAL & 0.22 \\
+src/instances/gap_c/c05100 & 5 & 100 & 1931.0 & 1931.0 & 0.0 & OPTIMAL & 0.09 \\
+src/instances/gap_c/c05200 & 5 & 200 & 3456.0 & 3456.0 & 0.0 & OPTIMAL & 0.3 \\
+src/instances/gap_c/c10100 & 10 & 100 & 1402.0 & 1402.0 & 0.0 & OPTIMAL & 0.52 \\
+src/instances/gap_c/c10200 & 10 & 200 & 2806.0 & 2806.0 & 0.0 & OPTIMAL & 2.66 \\
+src/instances/gap_c/c10400 & 10 & 400 & 5597.0 & 5597.0 & 0.0 & OPTIMAL & 1.88 \\
+src/instances/gap_c/c15900 & 15 & 900 & 11340.0 & 11340.0 & 0.0 & OPTIMAL & 107.37 \\
+src/instances/gap_c/c20100 & 20 & 100 & 1243.0 & 1243.0 & 0.0 & OPTIMAL & 0.24 \\
+src/instances/gap_c/c20200 & 20 & 200 & 2391.0 & 2391.0 & 0.0 & OPTIMAL & 1.92 \\
+src/instances/gap_c/c20400 & 20 & 400 & 4782.0 & 4782.0 & 0.0 & OPTIMAL & 22.99 \\
+src/instances/gap_c/c60900 & 60 & 900 & 9325.0 & 9327.0 & 0.0214 & TIME_LIMIT & 600.43 \\
+src/instances/gap_c/c201600 & 20 & 1600 & 18802.0 & 18804.0 & 0.0106 & TIME_LIMIT & 599.12 \\
+src/instances/gap_c/c401600 & 40 & 1600 & 17144.0 & 17146.0 & 0.0117 & TIME_LIMIT & 600.74 \\
+src/instances/gap_c/c801600 & 80 & 1600 & 16283.0 & 16287.0 & 0.0246 & TIME_LIMIT & 600.62 \\
+src/instances/gap_d/d05100 & 5 & 100 & 6353.0 & 6353.0 & 0.0 & OPTIMAL & 20.21 \\
+src/instances/gap_d/d05200 & 5 & 200 & 12742.0 & 12744.0 & 0.0157 & TIME_LIMIT & 600.0 \\
+src/instances/gap_d/d10100 & 10 & 100 & 6345.0 & 6351.0 & 0.0945 & TIME_LIMIT & 600.01 \\
+src/instances/gap_d/d10200 & 10 & 200 & 12426.0 & 12441.0 & 0.1206 & TIME_LIMIT & 600.01 \\
+src/instances/gap_d/d10400 & 10 & 400 & 24959.0 & 24968.0 & 0.036 & TIME_LIMIT & 600.02 \\
+src/instances/gap_d/d15900 & 15 & 900 & 55402.0 & 55414.0 & 0.0217 & TIME_LIMIT & 600.05 \\
+src/instances/gap_d/d20100 & 20 & 100 & 6175.0 & 6210.0 & 0.5636 & TIME_LIMIT & 600.01 \\
+src/instances/gap_d/d20200 & 20 & 200 & 12229.0 & 12268.0 & 0.3179 & TIME_LIMIT & 600.03 \\
+src/instances/gap_d/d20400 & 20 & 400 & 24559.0 & 24603.0 & 0.1788 & TIME_LIMIT & 600.04 \\
+src/instances/gap_d/d30900 & 30 & 900 & 54832.0 & 54883.0 & 0.0929 & TIME_LIMIT & 600.14 \\
+src/instances/gap_d/d40400 & 40 & 400 & 24349.0 & 24424.0 & 0.3071 & TIME_LIMIT & 600.06 \\
+src/instances/gap_d/d60900 & 60 & 900 & 54551.0 & 54677.0 & 0.2304 & TIME_LIMIT & 600.74 \\
+src/instances/gap_d/d201600 & 20 & 1600 & 97823.0 & 97848.0 & 0.0255 & TIME_LIMIT & 600.14 \\
+src/instances/gap_d/d401600 & 40 & 1600 & 97105.0 & 97171.0 & 0.0679 & TIME_LIMIT & 600.67 \\
+src/instances/gap_d/d801600 & 80 & 1600 & 97034.0 & 97182.0 & 0.1523 & TIME_LIMIT & 600.63 \\
+src/instances/gap_e/e05100 & 5 & 100 & 2867.0 & 2867.0 & 0.0 & OPTIMAL & 0.02 \\
+src/instances/gap_e/e05200 & 5 & 200 & 9507.0 & 9507.0 & 0.0 & OPTIMAL & 0.06 \\
+src/instances/gap_e/e10100 & 10 & 100 & 876.0 & 876.0 & 0.0 & OPTIMAL & 0.02 \\
+src/instances/gap_e/e10200 & 10 & 200 & 2956.0 & 2956.0 & 0.0 & OPTIMAL & 0.05 \\
+src/instances/gap_e/e10400 & 10 & 400 & 13542.0 & 13542.0 & 0.0 & OPTIMAL & 0.46 \\
+src/instances/gap_e/e15900 & 15 & 900 & -1.0e12 & 1.0e12 & 100.0 & INFEASIBLE_OR_UNBOUNDED & 0.11 \\
+src/instances/gap_e/e20100 & 20 & 100 & 1747.0 & 1747.0 & 0.0 & OPTIMAL & 0.08 \\
+src/instances/gap_e/e20200 & 20 & 200 & 5546.0 & 5546.0 & 0.0 & OPTIMAL & 0.48 \\
+src/instances/gap_e/e20400 & 20 & 400 & 34042.0 & 34042.0 & 0.0 & OPTIMAL & 3.48 \\
+src/instances/gap_e/e30900 & 30 & 900 & 65053.0 & 65053.0 & 0.0 & OPTIMAL & 4.75 \\
+src/instances/gap_e/e40400 & 40 & 400 & 11500.0 & 11500.0 & 0.0 & OPTIMAL & 1.32 \\
+src/instances/gap_e/e60900 & 60 & 900 & 35208.0 & 35208.0 & 0.0 & OPTIMAL & 572.37 \\
+src/instances/gap_e/e201600 & 20 & 1600 & -1.0e12 & 1.0e12 & 100.0 & INFEASIBLE_OR_UNBOUNDED & 0.23 \\
+src/instances/gap_e/e401600 & 40 & 1600 & -1.0e12 & 1.0e12 & 100.0 & INFEASIBLE_OR_UNBOUNDED & 0.87 \\
+src/instances/gap_e/e801600 & 80 & 1600 & 78040.0 & 78104.0 & 0.0819 & TIME_LIMIT & 600.59 \\
